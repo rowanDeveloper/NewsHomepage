@@ -1,0 +1,156 @@
+/* Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* !BASE STYLES/RESET */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+
+    /* Neutral Colors */
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+
+    /* Font size */
+    --Inter-font: 'Inter', 'sans-serif';
+    --font-size: 15px;
+}
+
+/* Basic reset */
+a {
+    text-decoration: none;      /* It removes the hiperlink */
+    color: inherit;
+    outline: none;
+}
+
+img {
+    max-width: 100%;            /* The images is not going to overflow its parent */
+    display: block; 
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: var(--Inter-font);
+    font-size: var(--font-size);
+}
+
+.container {
+    max-width: 23.5rem;             /* Which is 376 pixels */  
+    margin: 0 auto;                 /* Centralize my container */
+    padding: 1rem;
+}
+
+
+/* Header */
+
+.menu {
+    display: none;
+}
+
+
+/* Hero section */
+.hero {
+    display: grid;
+    grid-area: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.main-title {
+    color: var(--very-dark-blue);
+    font-size: 2.6rem;    
+    line-height: 2.6rem;
+
+    margin-bottom: 1rem;
+}
+
+.hero__paragraph {
+    color: var(--dark-grayish-blue);
+    line-height: 1.5rem;
+}
+
+.orangeButton {
+    display: inline-block;
+    border: none;
+    color: var(--off-white);
+    background-color: var(--soft-red);
+
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    padding: 1rem;
+}
+/* Article styles */
+.article {
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+    padding: 1.25rem;
+}
+
+.article__card {
+    margin: 2.5rem 0;
+}
+
+.article__title {
+    color: var(--soft-orange);
+    font-size: 1.5rem;
+}
+
+.article__subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.article__paragraph {
+    color: var(--grayish-blue);
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.article__card::after(:last-child) {
+    border: 1px solid var(--off-white);
+}
+
+/* ReadMore section */
+.readMore {
+    display: flex;
+    flex-direction: column;
+
+    margin: 4rem 0;
+} 
+
+.imageContainer {
+    display: inline;
+}
+
+.card {
+    max-width: 20.625rem;
+
+    display: grid;
+    grid-area: 1fr 1fr;   
+}
+
+.number {
+    color: var(--grayish-blue);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.readMore__title {
+    color: var(--very-dark-blue);
+}
+.readMore_paragraph {
+    color: var(--dark-grayish-blue);            /* I am pretty sure this is not the paragraph color */
+    line-height: 1.5rem;
+}
