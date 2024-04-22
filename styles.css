@@ -42,6 +42,10 @@ ul {
     list-style: none;
 }
 
+span {
+    display: inline-block;
+}
+
 body {
     font-family: var(--Inter-font);
     font-size: var(--font-size);
@@ -49,8 +53,10 @@ body {
 
 .container {
     max-width: 23.5rem;             /* Which is 376 pixels */  
-    margin: 0 auto;                 /* Centralize my container */
+    margin: 0 auto;                 
     padding: 1rem;
+
+    outline: 2px solid black;
 }
 
 
@@ -67,6 +73,8 @@ body {
     grid-area: 1fr 1fr 1fr;
     gap: 30px;
 }
+
+/* Maybe I don't need to diplay a grid in the Hero section */
 
 .main-title {
     color: var(--very-dark-blue);
@@ -130,27 +138,113 @@ body {
     margin: 4rem 0;
 } 
 
-.imageContainer {
-    display: inline;
-}
-
 .card {
     max-width: 20.625rem;
 
     display: grid;
-    grid-area: 1fr 1fr;   
+    grid-template-columns: 1fr 2fr;   
+    column-gap: 1.5rem;
+
+    margin: 1.2rem 0;
+}
+
+.content {
+    margin-top: -.5rem;
 }
 
 .number {
     color: var(--grayish-blue);
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 .readMore__title {
     color: var(--very-dark-blue);
+    margin-top: 1rem;
 }
+
 .readMore_paragraph {
     color: var(--dark-grayish-blue);            /* I am pretty sure this is not the paragraph color */
     line-height: 1.5rem;
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 1110px;
+        max-height: 810px;
+    }
+
+    .header {
+        max-width: 1110px;
+        max-height: 100px;
+    }
+
+    .menu { 
+        display: inline-flex;
+        position: absolute;
+    }
+
+    .list {
+        display: flex;                                                     /* So the default flex-direction is a row */
+    }
+
+    .list-link {
+        color: var(--dark-grayish-blue);
+    }
+
+    .hero {
+        max-width: 728px;
+        max-height: 510px;
+
+        display: grid;
+    }
+
+    .image-container {
+        width: 730px;
+        height: 300px;
+
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .main-title {
+        grid-row-start: 3;
+        grid-row-end: 5;
+
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    .hero__paragraph {
+        grid-row-start: 3;
+        grid-row-end: 5;
+
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .orangeButton {
+        grid-row-start: 4;
+        grid-row-end: 5;
+
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        padding: 10px 20px;
+        border: none;
+        background-color: var(--soft-red);
+    }
+
+    .article {
+        width: 350px;
+        height: 510px;
+    }
+    .readMore {
+        display: flex;
+        flex-direction: row;
+    }
 }
