@@ -52,11 +52,9 @@ body {
 }
 
 .container {
-    max-width: 23.5rem;             /* Which is 376 pixels */  
+    max-width: 23.5rem;             /* Which is 375 pixels */  
     margin: 0 auto;                 
     padding: 1rem;
-
-    outline: 2px solid black;
 }
 
 
@@ -75,21 +73,21 @@ body {
     font-weight: 400;
 }
 
-/* Hero section */ /*
+/* Hero section */
 .hero {
     display: grid;
-    grid-area: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 1.875rem; 
 }
-*/
+
 /* Maybe I don't need to diplay a grid in the Hero section */
+.imageDesktop {
+    display: none;
+}
 
 .main-title {
     color: var(--very-dark-blue);
     font-size: 2.6rem;    
     line-height: 2.6rem;
-
-    margin-bottom: 1rem;
 }
 
 .hero__paragraph {
@@ -120,12 +118,18 @@ body {
 
 .aside__title {
     color: var(--soft-orange);
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .aside__subtitle {
     font-size: 1.2rem;
     font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.aside__subtitle:hover {
+    color: var(--soft-orange);
 }
 
 .aside__paragraph {
@@ -134,6 +138,7 @@ body {
     line-height: 1.5rem;
 }
 
+/* This is suppose to be the line */
 .aside__card::after(:last-child) {
     border: 1px solid var(--off-white);
 }
@@ -171,6 +176,10 @@ body {
     margin-top: 1rem;
 }
 
+.readMore__title:hover {
+    color: var(--soft-red);
+}
+
 .readMore_paragraph {
     color: var(--dark-grayish-blue);            /* I am pretty sure this is not the paragraph color */
     line-height: 1.5rem;
@@ -179,15 +188,17 @@ body {
 
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 1440px;
+        max-width: 1110px;
         max-height: 810px;
 
-        margin: 2rem;
+        margin: auto;
         padding: 0;
+
+       /* outline: 2px solid black; */
     }
 
     .header {
-        max-width: 1440px;
+        max-width: 1110px;
         height: 100px;
         display: flex;
         align-items: center;
@@ -195,32 +206,46 @@ body {
         position: relative;
     }
 
-    .list {
-        display: flex;        
-    }
-
-    .list-item {
-      
-        padding: 0 2rem;
-    }
-
     .menu { 
         display: inline-flex;
     }
 
+    .list {
+        display: flex;       
+    }
+
+    .list-item {      
+        padding: 0 2rem;
+    }
+
+    .list-item:last-child{
+        left: -10px;
+    }
+
+    .list-link:hover {
+        color: var(--soft-red);
+    }
 
     .hero {
         max-width: 728px;
         max-height: 510px;
 
         display: grid;
-        gap: 10px;
+        gap: 0;
+    }
+
+    .imageMobile {
+        display: none;
+    }
+
+    .imageDesktop {
+        display: block;
     }
 
     /* Grid Layout */
-    .image-container {
-        width: 800px;        
-
+    .imageContainer {
+        width: 730px;                                       /* width: 730px - height: 300px */
+        
         grid-row-start: 1;
         grid-row-end: 3;
 
@@ -229,10 +254,13 @@ body {
     }
 
     .main-title {
-        font-size: 4rem;
-        line-height: 4rem;
+        max-width: 290px;
 
-        margin-right: 1rem;
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+
+        margin-top: 2.5rem;
+        margin-right: 90px;
 
         grid-row-start: 3;
         grid-row-end: 5;
@@ -247,6 +275,8 @@ body {
 
         grid-column-start: 2;
         grid-column-end: 3;
+
+        margin-top: 2.5rem;
     }
 
     .orangeButton {
@@ -257,6 +287,10 @@ body {
         grid-column-end: 3;
 
         padding: 10px 20px;
+    }
+
+    .orangeButton:hover {
+        background-color: var(--very-dark-blue);
     }
 
     .aside{
@@ -272,7 +306,7 @@ body {
     }
 
     .aside__title {
-        font-size: 2.5rem;
+        font-size: 2.5rem;       
     }
 
     .readMore {
