@@ -64,8 +64,8 @@ body {
     height: auto;
 }
 
-.menu {
-    display: none;
+.list {
+    display: none;                 /* This is my ul */
 }
 
 .list-link {
@@ -124,8 +124,6 @@ body {
 .aside__subtitle {
     font-size: 1.2rem;
     font-weight: 700;
-
-    margin-bottom: 10px;
 }
 
 .aside__subtitle:hover {
@@ -139,8 +137,9 @@ body {
 }
 
 /* This is suppose to be the line */
-.aside__card::after(:last-child) {
-    border: 1px solid var(--off-white);
+.aside__card:not(:last-child) {
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--off-white);
 }
 
 /* ReadMore section */
@@ -148,7 +147,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    margin: 4rem 0; 
+    margin-top: 4rem; 
 } 
 
 .card {
@@ -156,19 +155,17 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 2fr;   
-    column-gap: 1.5rem;
+    column-gap: 1.5rem; 
 
-    margin: 1.2rem 0;
-}
-
-.content {
-    margin-top: -.5rem;
+    margin: 1rem 0;
 }
 
 .number {
     color: var(--grayish-blue);
     font-size: 2rem;
     font-weight: 700;
+
+    margin-top: -.5rem  ;
 }
 
 .readMore__title {
@@ -182,7 +179,6 @@ body {
 
 .readMore_paragraph {
     color: var(--dark-grayish-blue);            /* I am pretty sure this is not the paragraph color */
-    line-height: 1.5rem;
     margin-top: 1rem;
 }
 
@@ -191,7 +187,7 @@ body {
         max-width: 1110px;
         max-height: 810px;
 
-        margin: 5.5rem auto;
+        margin: 8.125rem auto;
         padding: 0;
 
         
@@ -207,20 +203,17 @@ body {
         position: relative;
     }
 
-    .menu { 
-        display: inline-flex;
-    }
-
     .list {
         display: flex;       
     }
 
-    .list-item {      
-        padding: 0 2rem;
+    /* I know this is really a not good code - but at least the last "link-item" perfectly alings with the aside section */
+    .list-item:not(:last-child) {      
+        padding: 0 1.4rem;
     }
 
-    .list-item:last-child{
-        left: -10px;
+    .list-item:last-child {
+        padding-left: 1.4rem;               
     }
 
     .list-link:hover {
@@ -228,8 +221,8 @@ body {
     }
 
     .hero {
-        max-width: 728px;
-        max-height: 510px;
+        max-width: 1110px;
+        max-height: 510px; 
 
         display: grid;
         gap: 0;
@@ -287,7 +280,7 @@ body {
         grid-column-start: 2;
         grid-column-end: 3;
 
-        padding: 10px 20px;
+        padding: .8rem 1.5rem;
     }
 
     .orangeButton:hover {
